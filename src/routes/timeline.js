@@ -1,49 +1,58 @@
 const express = require('express');
 const router = express.Router();
+const functions = require('../structs/functions');
 
 router.get('/fortnite/api/calendar/v1/timeline', (req, res) => {
-    const version = req.headers["user-agent"]?.split("-")[1]?.split("-CL")[0] || "1.0";
-    const season = version.split('.')[0];
+    const memory = functions.GetVersionInfo(req);
+    const season = memory.season;
+
+    const activeEvents = [
+        {
+            "eventType": `EventFlag.Season${season}`,
+            "activeUntil": "9999-12-31T23:59:59.999Z",
+            "activeSince": "2019-12-31T23:59:59.999Z"
+        },
+        {
+            "eventType": `EventFlag.${memory.lobby}`,
+            "activeUntil": "9999-12-31T23:59:59.999Z",
+            "activeSince": "2019-12-31T23:59:59.999Z"
+        }
+    ];
 
     res.json({
         "channels": {
-            "standalone-store": {},
-            "client-matchmaking": {},
-            "tk": {},
-            "featured-islands": {},
-            "community-votes": {},
+            "client-matchmaking": {
+                "states": [],
+                "cacheExpire": "9999-12-31T23:59:59.999Z"
+            },
             "client-events": {
                 "states": [{
-                    "validFrom": "2020-05-21T18:36:38.383Z",
-                    "activeEvents": [
-                        {
-                            "eventType": `EventFlag.LobbySeason${season}`,
-                            "activeUntil": "9999-12-31T23:59:59.999Z",
-                            "activeSince": "2019-12-31T23:59:59.999Z"
-                        }
-                    ],
+                    "validFrom": "2019-12-31T23:59:59.999Z",
+                    "activeEvents": activeEvents,
                     "state": {
                         "activeStorefronts": [],
                         "eventNamedWeights": {},
-                        "activeEvents": [],
-                        "seasonNumber": parseInt(season),
+                        "seasonNumber": season,
                         "seasonTemplateId": `AthenaSeason:athenaseason${season}`,
                         "matchXpBonusPoints": 0,
-                        "eventPunchCardTemplateId": "",
-                        "seasonBegin": "9999-12-31T23:59:59.999Z",
+                        "seasonBegin": "2020-01-01T00:00:00Z",
                         "seasonEnd": "9999-12-31T23:59:59.999Z",
                         "seasonDisplayedEnd": "9999-12-31T23:59:59.999Z",
                         "weeklyStoreEnd": "9999-12-31T23:59:59.999Z",
                         "stwEventStoreEnd": "9999-12-31T23:59:59.999Z",
                         "stwWeeklyStoreEnd": "9999-12-31T23:59:59.999Z",
+                        "sectionStoreEnds": {
+                            "Featured": "9999-12-31T23:59:59.999Z"
+                        },
                         "dailyStoreEnd": "9999-12-31T23:59:59.999Z"
                     }
                 }],
                 "cacheExpire": "9999-12-31T23:59:59.999Z"
             }
         },
-        "cacheIntervalMins": 99999,
-        "currentTime": new Date()
+        "eventsTimeOffsetHrs": 0,
+        "cacheIntervalMins": 10,
+        "currentTime": new Date().toISOString()
     });
 });
 

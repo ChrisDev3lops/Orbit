@@ -1,0 +1,60 @@
+{
+  "rotation": [
+    {
+      "name": "Renegade Raider",
+      "templateId": "AthenaCharacter:CID_028_Athena_Commando_F",
+      "price": 1200,
+      "section": "Featured",
+      "tileSize": "Normal"
+    },
+    {
+      "name": "Aerial Assault Trooper",
+      "templateId": "AthenaCharacter:CID_017_Athena_Commando_M",
+      "price": 1200,
+      "section": "Featured",
+      "tileSize": "Normal"
+    },
+    {
+      "name": "Black Knight",
+      "templateId": "AthenaCharacter:CID_035_Athena_Commando_M_Medieval",
+      "price": 2000,
+      "section": "Featured",
+      "tileSize": "Normal"
+    },
+    {
+      "name": "Skull Trooper",
+      "templateId": "AthenaCharacter:CID_030_Athena_Commando_M_Halloween",
+      "price": 1500,
+      "section": "Featured",
+      "tileSize": "Normal"
+    },
+    {
+      "name": "Floss",
+      "templateId": "AthenaDance:EID_Floss",
+      "price": 500,
+      "section": "Daily",
+      "tileSize": "Small"
+    },
+    {
+      "name": "Take The L",
+      "templateId": "AthenaDance:EID_TakeTheL",
+      "price": 500,
+      "section": "Daily",
+      "tileSize": "Small"
+    },
+    {
+      "name": "Reaper",
+      "templateId": "AthenaPickaxe:Pickaxe_Lockjaw",
+      "price": 800,
+      "section": "Daily",
+      "tileSize": "Small"
+    },
+    {
+      "name": "Raptor",
+      "templateId": "AthenaGlider:Glider_Raptor",
+      "price": 800,
+      "section": "Daily",
+      "tileSize": "Small"
+    }
+  ]
+}

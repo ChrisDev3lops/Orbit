@@ -1,0 +1,49 @@
+{
+  "_id": "orbitcommoncore",
+  "created": "2024-06-16T00:00:00.000Z",
+  "updated": "2024-06-16T00:00:00.000Z",
+  "rvn": 1,
+  "wipeNumber": 1,
+  "accountId": "orbit",
+  "profileId": "common_core",
+  "version": "orbit_v1",
+  "items": {
+    "Currency:MtxPurchased": {
+      "templateId": "Currency:MtxPurchased",
+      "attributes": {
+        "platform": "EpicPC"
+      },
+      "quantity": 1000000
+    }
+  },
+  "stats": {
+    "attributes": {
+      "survey_data": {},
+      "personal_offers": {},
+      "intro_game_played": true,
+      "import_friends_claimed": {},
+      "mtx_purchase_history": {
+        "refundsUsed": 0,
+        "refundCredits": 3,
+        "purchases": []
+      },
+      "undo_cooldowns": [],
+      "mtx_affiliate_set_time": "",
+      "inventory_limit_bonus": 0,
+      "current_mtx_platform": "EpicPC",
+      "mtx_affiliate": "",
+      "weekly_purchases": {},
+      "daily_purchases": {},
+      "ban_history": {},
+      "in_app_purchases": {},
+      "permissions": [],
+      "undo_timeout": "min",
+      "monthly_purchases": {},
+      "allowed_to_send_gifts": true,
+      "mfa_enabled": true,
+      "allowed_to_receive_gifts": true,
+      "gift_history": {}
+    }
+  },
+  "commandRevision": 1
+}

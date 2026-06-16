@@ -1,0 +1,42 @@
+{
+  "_id": "orbitcampaign",
+  "created": "0001-01-01T00:00:00.000Z",
+  "updated": "0001-01-01T00:00:00.000Z",
+  "rvn": 1,
+  "wipeNumber": 1,
+  "accountId": "orbit",
+  "profileId": "campaign",
+  "version": "no_version",
+  "items": {},
+  "stats": {
+    "attributes": {
+      "node_costs": {},
+      "mission_alert_redemption_record": {},
+      "client_settings": {},
+      "level": 1,
+      "named_counters": {},
+      "default_hero_squad_id": "",
+      "collection_book": {
+        "maxBookXpLevelAchieved": 0
+      },
+      "quest_manager": {
+        "dailyLoginInterval": "0001-01-01T00:00:00.000Z",
+        "dailyQuestRerolls": 1
+      },
+      "bans": {},
+      "gameplay_stats": [],
+      "inventory_limit_bonus": 0,
+      "daily_rewards": {},
+      "xp": 0,
+      "homebase": {
+        "townName": "",
+        "bannerIconId": "",
+        "bannerColorId": "",
+        "flagPattern": -1,
+        "flagColor": -1
+      },
+      "packed_inventory_size_overrides": {}
+    }
+  },
+  "commandRevision": 0
+}

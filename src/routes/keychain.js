@@ -3,24 +3,24 @@ const router = express.Router();
 const fs = require('fs');
 const path = require('path');
 
-router.get('/fortnite/api/keychain/*', (req, res) => {
+function loadKeychain() {
     const keychainPath = path.join(__dirname, '../../responses/keychain.json');
     if (fs.existsSync(keychainPath)) {
-        const keychain = JSON.parse(fs.readFileSync(keychainPath, 'utf8'));
-        res.json(keychain);
-    } else {
-        res.json([]);
+        return JSON.parse(fs.readFileSync(keychainPath, 'utf8'));
     }
+    return [];
+}
+
+router.get('/fortnite/api/storefront/v2/keychain', (req, res) => {
+    res.json(loadKeychain());
 });
 
-router.post('/fortnite/api/keychain/*', (req, res) => {
-    const keychainPath = path.join(__dirname, '../../responses/keychain.json');
-    if (fs.existsSync(keychainPath)) {
-        const keychain = JSON.parse(fs.readFileSync(keychainPath, 'utf8'));
-        res.json(keychain);
-    } else {
-        res.json([]);
-    }
+router.get('/fortnite/api/keychain/*', (req, res) => {
+    res.json(loadKeychain());
+});
+
+router.get('/catalog/api/shared/bulk/offers', (req, res) => {
+    res.json({});
 });
 
 module.exports = router;
