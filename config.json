@@ -29,6 +29,19 @@
   "defaults": {
     "season": 12,
     "build": "12.61",
-    "displayName": "Asteria"
+    "displayName": ""
+  },
+  "gameServer": {
+    "ip": "127.0.0.1",
+    "port": 7777
+  },
+  "matchmaker": {
+    "enabled": true,
+    "wsPort": 80,
+    "delayConnecting": 200,
+    "delayWaiting": 1000,
+    "delayQueued": 2000,
+    "delaySessionAssignment": 6000,
+    "delayJoin": 8000
   }
 }

@@ -35,15 +35,16 @@
     "_title": "athenamessage",
     "overrideablemessage": {
       "_type": "CommonUI Simple Message",
+      "hidden": false,
       "message": {
         "image": "https://cdn2.unrealengine.com/Fortnite/RUS-Axe-1921x1082-fb41e51e9a280b9752b42e2b94b31e34d5758870.png",
         "_type": "CommonUI Simple Message Base",
-        "title": "Test",
-        "body": "Test"
+        "title": "Orbit",
+        "body": "Developed by s3cw on discord"
       }
     },
     "_activeDate": "2017-08-30T03:08:31.687Z",
-    "lastModified": "2017-11-10T15:38:47.250Z",
+    "lastModified": "2026-06-16T15:00:00.000Z",
     "_locale": "en-US"
   },
   "subgameselectdata": {
@@ -93,34 +94,8 @@
         "hidden": false,
         "messagetype": "normal",
         "_type": "CommonUI Simple Message Base",
-        "title": {
-          "de": "100-Spieler-PvP",
-          "ru": "PvP-режим на 100 игроков",
-          "ko": "100명의 플레이어와 함께하는 PvP",
-          "en": "100 Player PvP",
-          "it": "PvP a 100 giocatori",
-          "fr": "JcJ à 100 joueurs",
-          "es": "JcJ de 100 jugadores",
-          "ar": "100 Player PvP",
-          "ja": "100人参加のPvP",
-          "pl": "PvP dla 100 graczy",
-          "es-419": "JcJ de 100 jugadores",
-          "tr": "100 Oyunculu PvP"
-        },
-        "body": {
-          "de": "Battle Royale, 100-Spieler-PvP.\n\nFortschritte im PvE haben keinen Einfluss auf Battle Royale.",
-          "ru": "PvP-режим на 100 игроков «Королевская битва».\n\nПрогресс в кампании не затрагивает «Королевскую битву».",
-          "ko": "100명의 플레이어와 함께하는 PvP 모드, 배틀로얄.\n\nPvE 모드의 진행 상황은 배틀로얄 플레이에 영향을 주지 않습니다.",
-          "en": "100 Player PvP Battle Royale.\n\nPvE progress does not affect Battle Royale.",
-          "it": "Battaglia reale PvP a 100 giocatori.\n\nI progressi in PvE non sono trasferiti nella Battaglia reale.",
-          "fr": "Un Battle Royale à 100 en JcJ.\n\nLa progression du mode JcE n'affecte pas Battle Royale.",
-          "es": "Battle Royale JcJ de 100 jugadores.\n\nEl progreso JcE no afecta a Battle Royale.",
-          "ar": "100 Player PvP Battle Royale.\n\nPvE progress does not affect Battle Royale.",
-          "ja": "100人参加のPvPバトルロイヤル。\n\nPvEモードの進行状況はバトルロイヤルに影響しません。",
-          "pl": "Battle Royale: PvP dla 100 graczy\n\nPostępy w kampanii nie wpływają na grę w Battle Royale.",
-          "es-419": "Batalla campal JcJ de 100 jugadores.\n\nEl progreso de JcE no afecta Batalla campal.",
-          "tr": "100 Oyunculu PvP Battle Royale. PvE ilerlemesi Battle Royale'i etkilemez."
-        },
+        "title": "Orbit",
+        "body": "Developed by s3cw on discord",
         "spotlight": false
       }
     },

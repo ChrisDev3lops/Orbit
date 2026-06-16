@@ -5,6 +5,7 @@ const errors = require('./structs/errors');
 const { v4: uuidv4 } = require('uuid');
 const { ApiException } = errors;
 const config = require('../config.json');
+const { startWsMatchmaker } = require('./matchmaker/wsMatchmaker');
 
 const app = express();
 require('./db/connect');
@@ -41,4 +42,5 @@ app.use((err, req, res, next) => {
 
 app.listen(config.server.port, () => {
     logger.Log(`Orbit Backend is up and listening on port ${config.server.port}!`);
+    startWsMatchmaker();
 });

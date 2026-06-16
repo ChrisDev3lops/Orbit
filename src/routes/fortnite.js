@@ -24,5 +24,14 @@ router.get('/fortnite/api/game/v2/creative/creative-island/account/:accountId/hi
 router.get('/fortnite/api/game/v2/creative/creative-island/search', (req, res) => res.json([]));
 router.get('/fortnite/api/game/v2/creative/creative-island/featured', (req, res) => res.json([]));
 router.get('/fortnite/api/game/v2/creative/creative-island/recommended', (req, res) => res.json([]));
+router.get('/fortnite/api/game/v2/enabledfeatures', (req, res) => res.json([]));
+router.get('/fortnite/api/game/v2/microservice/arty', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/vehicle/:accountId', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/world/:accountId', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/referral/:accountId', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/fallcompatibility/profile', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/discovery/surface/:accountId', (req, res) => res.json({}));
+router.get('/fortnite/api/game/v2/leaderboards/:leaderboardId', (req, res) => res.json([]));
+router.get('/fortnite/api/game/v2/profile/token/:accountId', (req, res) => res.json({}));
 
 module.exports = router;
