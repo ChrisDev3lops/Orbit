@@ -27,8 +27,8 @@
     }
   },
   "defaults": {
-    "season": 2,
-    "build": "2.0",
+    "season": 12,
+    "build": "12.61",
     "displayName": "Asteria"
   }
 }

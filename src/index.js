@@ -14,6 +14,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.set("etag", false);
 
+app.use((req, res, next) => {
+    logger.Log(`[GAME] ${req.method} ${req.path}`);
+    next();
+});
+
 app.use(require('./api/api'));
 
 app.use((req, res, next) => {
@@ -35,5 +40,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(config.server.port, () => {
-    logger.Log(`Asteria Backend is up and listening on port ${config.server.port}!`);
+    logger.Log(`Orbit Backend is up and listening on port ${config.server.port}!`);
 });

@@ -38,6 +38,13 @@ router.get('/fortnite/api/cloudstorage/system', (req, res) => {
     res.json(files);
 });
 
+router.get('/fortnite/api/cloudstorage/system/config', (req, res) => {
+    res.json({
+        "LastUpdated": new Date().toISOString(),
+        "AppVersions": {}
+    });
+});
+
 router.get('/fortnite/api/cloudstorage/user/:accountId', (req, res) => {
     const userDir = path.join(cloudStorageDir, req.params.accountId);
     if (!fs.existsSync(userDir)) {

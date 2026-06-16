@@ -1,0 +1,33 @@
+{
+  "accountId": "asteria",
+  "created": "2024-06-16T00:00:00.000Z",
+  "updated": "2024-06-16T00:00:00.000Z",
+  "rvn": 1,
+  "wn": 1,
+  "profileId": "athena",
+  "version": "jan_2025",
+  "items": {},
+  "stats": {
+    "attributes": {
+      "current_mtx_balance": 10000,
+      "current_season_level": 100,
+      "season_num": 2,
+      "book_level": 100,
+      "book_xp": 1000000,
+      "battlestars": 1000,
+      "xp_boosts": [],
+      "friend_xp_boosts": [],
+      "homebase_rating": 1,
+      "has_linked_device": false,
+      "in_app_purchases": {},
+      "mfa_enabled": false,
+      "monthly_vbucks": 0,
+      "num_vbucks_purchased": 0,
+      "platform": "Windows",
+      "remaining_daily_match_play_count": 0,
+      "remaining_timed_match_play_count": 0,
+      "voice_chat_enabled": false
+    }
+  },
+  "commandRevision": 1
+}

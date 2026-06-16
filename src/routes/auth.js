@@ -5,6 +5,10 @@ router.post('/fortnite/api/game/v2/grant_access/*', (req, res) => {
     res.json({});
 });
 
+router.post('/fortnite/api/game/v2/grant_access', (req, res) => {
+    res.json({});
+});
+
 router.post('/fortnite/api/game/v3/profile/:accountId/client/ClientLogin', (req, res) => {
     res.json({
         profileRevision: 1,
@@ -23,17 +27,17 @@ router.get('/fortnite/api/game/v2/enabled_features', (req, res) => {
 
 router.get('/fortnite/api/game/v2/friendcodes/*/epic', (req, res) => {
     res.json([{
-        "codeId": "ASTERIA",
+        "codeId": "ORBIT",
         "codeType": "CodeToken:FounderFriendInvite",
         "dateCreated": "2024-06-16T21:37:00.420Z"
     },
     {
-        "codeId": "asteriacode",
+        "codeId": "orbitcode",
         "codeType": "CodeToken:FounderFriendInvite_XBOX",
         "dateCreated": "2024-06-16T21:37:00.420Z"
     },
     {
-        "codeId": "asteriamobile",
+        "codeId": "orbitmobile",
         "codeType": "CodeToken:MobileInvite",
         "dateCreated": "2024-06-16T21:37:00.420Z"
     }])

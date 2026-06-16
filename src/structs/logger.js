@@ -1,6 +1,6 @@
 module.exports = {
   Log(data) {
-    console.log('[\x1b[35;1mAsteria\x1b[0m]', data, '\x1b[0m')
+    console.log('[\x1b[36;1mOrbit\x1b[0m]', data, '\x1b[0m')
   },
   Error(data) {
     console.error('[\x1b[31mERROR\x1b[0m]\x1b[31m', data, '\x1b[0m')
