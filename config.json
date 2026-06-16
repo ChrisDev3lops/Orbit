@@ -1,0 +1,34 @@
+{
+  "server": {
+    "port": 3551,
+    "host": "localhost"
+  },
+  "database": {
+    "url": "mongodb://localhost:27017/asteria"
+  },
+  "features": {
+    "shop": {
+      "enabled": true,
+      "autoRefresh": true,
+      "refreshInterval": 24
+    },
+    "maintenance": {
+      "enabled": false,
+      "message": "Server under maintenance"
+    },
+    "discord": {
+      "enabled": false,
+      "token": "",
+      "clientId": ""
+    },
+    "xmpp": {
+      "enabled": true,
+      "port": 5222
+    }
+  },
+  "defaults": {
+    "season": 2,
+    "build": "2.0",
+    "displayName": "Asteria"
+  }
+}
