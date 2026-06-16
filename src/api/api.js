@@ -39,6 +39,7 @@ router.use(require('../routes/twitch'));
 router.use(require('../routes/feedback'));
 router.use(require('../routes/world'));
 router.use(require('../routes/chat'));
+router.use(require('../routes/arena'));
 
 module.exports = router;
 

@@ -29,6 +29,7 @@ function parseBuildInfo(req) {
 function getPlaylistForBucket(bucketId) {
     if (!bucketId) return "Playlist_DefaultSolo";
     const lower = bucketId.toLowerCase();
+    if (lower.includes("showdown") || lower.includes("arena")) return "Playlist_Showdown_Alt_Solo";
     if (lower.includes("solo")) return "Playlist_DefaultSolo";
     if (lower.includes("duo")) return "Playlist_DefaultDuo";
     if (lower.includes("squad")) return "Playlist_DefaultSquad";
