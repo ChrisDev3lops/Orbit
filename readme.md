@@ -1,4 +1,4 @@
-# Asteria
+# Orbit
 
 **An open source backend built with JavaScript**
 
