@@ -17,7 +17,8 @@
 
 # Features
 - [x] Lobby Support (Tested on S7, S8 and S12)
-- [x] Mobile Support Soon (mobile support coming soon)
+- [x] Dedicated Discord Bot
+- [x] Auto Rotator
 - [x] Chapter 2 + Chapter 1 Support
 - [x] Base Launcher API (For merging launchers with backends)
 

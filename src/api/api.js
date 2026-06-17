@@ -40,6 +40,7 @@ router.use(require('../routes/feedback'));
 router.use(require('../routes/world'));
 router.use(require('../routes/chat'));
 router.use(require('../routes/arena'));
+router.use(require('../routes/xp'));
 
 module.exports = router;
 

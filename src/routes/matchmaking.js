@@ -26,6 +26,16 @@ function parseBuildInfo(req) {
     return { season, build };
 }
 
+function parseBucketId(bucketId) {
+    if (!bucketId || bucketId === "0") {
+        return { playlist: "Playlist_DefaultSolo", buildUniqueId: "13477524" };
+    }
+    const parts = bucketId.split(":");
+    const playlist = parts[0] || "Playlist_DefaultSolo";
+    const buildUniqueId = parts[1] || "13477524";
+    return { playlist, buildUniqueId };
+}
+
 function getPlaylistForBucket(bucketId) {
     if (!bucketId) return "Playlist_DefaultSolo";
     const lower = bucketId.toLowerCase();
@@ -38,9 +48,12 @@ function getPlaylistForBucket(bucketId) {
     if (lower.includes("ltm")) return "Playlist_LTM";
     return "Playlist_DefaultSolo";
 }
+
 router.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/*", (req, res) => {
     const bucketId = req.query.bucketId || "0";
-    res.cookie("currentbuildUniqueId", bucketId.split(":")[0] || "0");
+    const parsed = parseBucketId(bucketId);
+    res.cookie("currentbuildUniqueId", parsed.buildUniqueId);
+    res.cookie("currentPlaylist", parsed.playlist);
 
     res.json({
         serviceUrl: `ws://${wsUrl}`,
@@ -52,7 +65,9 @@ router.get("/fortnite/api/game/v2/matchmakingservice/ticket/player/*", (req, res
 
 router.get("/fortnite/api/game/v2/matchmaking/ticket/player/:accountId", (req, res) => {
     const bucketId = req.query.bucketId || "0";
-    res.cookie("currentbuildUniqueId", bucketId.split(":")[0] || "0");
+    const parsed = parseBucketId(bucketId);
+    res.cookie("currentbuildUniqueId", parsed.buildUniqueId);
+    res.cookie("currentPlaylist", parsed.playlist);
 
     res.json({
         serviceUrl: `ws://${wsUrl}`,
@@ -70,13 +85,16 @@ router.get("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessio
     res.json({
         accountId: req.params.accountId,
         sessionId: req.params.sessionId,
-        key: "AOJEv8uTFmUh7XM2328kq9rlAzeQ5xzWzPIiyKn2s7s="
+        key: "AOJEv8uTFmUh7XM2328kq9rlAzeQ5xzWzPIiyKn2s7s=",
+        joinToken: "join-token-12345",
+        sessionType: "game"
     });
 });
 
 router.get("/fortnite/api/matchmaking/session/:sessionId", (req, res) => {
     const { season } = parseBuildInfo(req);
-    const playlist = getPlaylistForBucket(req.cookies.currentbuildUniqueId);
+    const playlist = getPlaylistForBucket(req.cookies.currentPlaylist);
+    const buildUniqueId = req.cookies.currentbuildUniqueId || "13477524";
 
     const isChapter1 = season >= 1 && season <= 10;
     const region = "EU";
@@ -108,13 +126,13 @@ router.get("/fortnite/api/matchmaking/session/:sessionId", (req, res) => {
             TENANT_s: "Fortnite",
             BEACONPORT_i: 15009,
             ...(isChapter1 ? {} : {
-                BUILDUNIQUEID_s: req.cookies.currentbuildUniqueId || "0"
+                BUILDUNIQUEID_s: buildUniqueId
             })
         },
         publicPlayers: [],
         privatePlayers: [],
         totalPlayers: 1,
-        allowJoinInProgress: false,
+        allowJoinInProgress: true,
         shouldAdvertise: false,
         isDedicated: true,
         usesStats: false,
@@ -122,13 +140,21 @@ router.get("/fortnite/api/matchmaking/session/:sessionId", (req, res) => {
         usesPresence: false,
         allowJoinViaPresence: true,
         allowJoinViaPresenceFriendsOnly: false,
-        buildUniqueId: req.cookies.currentbuildUniqueId || "0",
+        buildUniqueId: buildUniqueId,
         lastUpdated: new Date().toISOString(),
-        started: false
+        started: true
     });
 });
 
 router.post("/fortnite/api/matchmaking/session/:sessionId/join", (req, res) => {
+    res.status(204).end();
+});
+
+router.post("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId/join", (req, res) => {
+    res.status(204).end();
+});
+
+router.delete("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId", (req, res) => {
     res.status(204).end();
 });
 
@@ -139,8 +165,13 @@ router.post("/fortnite/api/matchmaking/session/matchMakingRequest", (req, res) =
 router.delete("/fortnite/api/matchmaking/session/:sessionId", (req, res) => {
     res.status(204).end();
 });
+
 router.get("/fortnite/api/matchmaking/session/:sessionId/players", (req, res) => {
     res.json([]);
+});
+
+router.put("/fortnite/api/matchmaking/session/:sessionId/players", (req, res) => {
+    res.status(204).end();
 });
 
 router.get("/fortnite/api/game/v2/matchmaking/account/:accountId/session/:sessionId/players", (req, res) => {

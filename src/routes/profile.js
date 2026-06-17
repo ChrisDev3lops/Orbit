@@ -49,8 +49,6 @@ function sendMcp(res, profileId, profile, baseRevision, queryRevision, applyProf
         responseVersion: 1
     });
 }
-
-// Favorite / unfavorite a batch of items.
 router.post('/fortnite/api/game/v2/profile/:accountId/client/SetItemFavoriteStatusBatch', (req, res) => {
     const profileId = req.query.profileId || "athena";
     const profile = getProfile(profileId);
@@ -84,8 +82,6 @@ router.post('/fortnite/api/game/v2/profile/:accountId/client/SetItemFavoriteStat
 
     sendMcp(res, profileId, profile, baseRevision, queryRevision, applyProfileChanges);
 });
-
-// Favorite / unfavorite a single item.
 router.post('/fortnite/api/game/v2/profile/:accountId/client/SetItemFavoriteStatus', (req, res) => {
     const profileId = req.query.profileId || "athena";
     const profile = getProfile(profileId);
@@ -168,8 +164,6 @@ router.post('/fortnite/api/game/v2/profile/:accountId/client/EquipBattleRoyaleCu
     let statChanged = false;
     let variantChanged = false;
     const itemToSlot = req.body.itemToSlot;
-
-    // Apply variant (style) changes to the item being equipped.
     try {
         const variantStr = JSON.stringify(req.body.variantUpdates || []);
         if (variantStr.includes("active") && itemToSlot && profile.items[itemToSlot]) {
